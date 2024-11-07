@@ -38,6 +38,13 @@ nav ul li a {
 
 section {
   padding: 20px;
+  margin: 20px;
+  flex-direction: column;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  text-align: center;
 }
 
 h2 {
