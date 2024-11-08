@@ -12,16 +12,17 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  background-color: #f0f0f0;
+  background-color: #aea8a8;
+  color: #f7f8fa;
 }
 
 .card {
-  background-color: white;      /* Color de fondo del cuadro */
+  background-color: #03050bcf;      /* Color de fondo del cuadro */
   border-radius: 10px;          /* Esquinas redondeadas */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombreado */
   padding: 20px;                /* Espaciado interno */
   margin: 20px;                 /* Espaciado externo entre cuadros */
-  width: 500px;                 /* Ancho del cuadro */
+  width: 800px;                 /* Ancho del cuadro */
   text-align: center;           /* Centra el texto dentro del cuadro */
 }
 
@@ -32,7 +33,7 @@ body {
 }
 
 header {
-  background: #333;
+  background: #090f32;
   color: #fff;
   padding: 10px 0;
   text-align: center;
@@ -65,12 +66,12 @@ section {
 }
 
 h2 {
-  color: #333;
+  color: #e2e4ee;
 }
 
 footer {
   text-align: center;
   padding: 10px 0;
-  background: #333;
+  background: #090f32;
   color: #fff;
 }
