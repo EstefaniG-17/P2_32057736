@@ -22,7 +22,8 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombreado */
   padding: 20px;                /* Espaciado interno */
   margin: 20px;                 /* Espaciado externo entre cuadros */
-  width: 800px;                 /* Ancho del cuadro */
+  width: 100%;                 /* Ancho del cuadro */
+  max-width: 800px;
   text-align: center;           /* Centra el texto dentro del cuadro */
 }
 
@@ -61,7 +62,7 @@ section {
   display:flex;
   justify-content: center;
   align-items: center;
-  height: 50vh;
+  height: auto;
   text-align: center;
 }
 
@@ -74,4 +75,19 @@ footer {
   padding: 10px 0;
   background: #090f32;
   color: #fff;
+}
+
+@media (max-width: 768px) {
+  nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .card{
+    margin: 10px;
+  }
+
+  section{
+    height: auto;
+  }
 }
