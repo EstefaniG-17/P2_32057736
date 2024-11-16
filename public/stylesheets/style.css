@@ -1,12 +1,3 @@
-/*body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-a {
-  color: #00B7FF;
-}*/
-
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
@@ -14,10 +5,18 @@ body {
   padding: 0;
   background-color: #aea8a8;
   color: #f7f8fa;
+
+  margin: 0; /* Eliminar márgenes por defecto */
+  height: 100vh; /* Altura completa de la ventana del navegador */
+  background-image: url('https://img.freepik.com/vector-premium/patron-blanco-negro-hojaspatron-botanico-costuras-estilo-escandinavo-hojas-blancas-sobre-fondo-negro-diseno-minimalista-moderno-ilustracion-vectorial_225753-2804.jpg'); /* Reemplaza con la ruta de tu imagen */
+  background-size: cover; /* Asegura que la imagen cubra todo el body */
+  background-position: center; /* Centra la imagen */
+  /*background-repeat: no-repeat;  Evita que la imagen se repita */
+  color: white; /* Cambia el color del texto según sea necesario */
 }
 
 .card {
-  background-color: #03050bcf;      /* Color de fondo del cuadro */
+  background-color: #090e1ccf;      /* Color de fondo del cuadro */
   border-radius: 10px;          /* Esquinas redondeadas */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombreado */
   padding: 20px;                /* Espaciado interno */
@@ -90,4 +89,12 @@ footer {
   section{
     height: auto;
   }
+}
+
+.imagen {
+  width: 100%; /* Modifica este valor para el ancho deseado */
+  max-width: 330px;
+  height: auto; /* Modifica este valor para la altura deseada */
+  object-fit: cover; /* Asegura que la imagen se recorte adecuadamente */
+  margin: 10px; /* Espacio de separación entre las imágenes */
 }
