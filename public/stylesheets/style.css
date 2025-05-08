@@ -1,4 +1,13 @@
 body {
+<<<<<<< HEAD
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+=======
   font-family: Arial, sans-serif;
   line-height: 1.6;
   margin: 0;
@@ -98,3 +107,4 @@ footer {
   object-fit: cover; /* Asegura que la imagen se recorte adecuadamente */
   margin: 10px; /* Espacio de separación entre las imágenes */
 }
+>>>>>>> ea0a97fd5f673a424b495d758d1ac6840c8a18da
