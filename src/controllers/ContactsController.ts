@@ -9,7 +9,7 @@ export class ContactsController {
             const { email, name, comment } = req.body;
             const ipAddress = req.ip || 'unknown';
 
-            const result = await this.service.add(email, name, comment, ipAddress);
+            const result = await this.service.add(email.trim(), name, comment, ipAddress);
             
             req.session.message = result.message;
             req.session.success = true;
@@ -30,4 +30,3 @@ export class ContactsController {
         }
     }
 }
-

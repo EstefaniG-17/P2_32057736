@@ -53,5 +53,5 @@ export const validateExpiration = (month: string, year: string): boolean => {
 };
 
 export const validateAmount = (amount: number): boolean => {
-  return amount > 0 && amount <= 1_000_000; // Ejemplo: máximo 1 millón
+  return amount > 0 && amount <= 1_000_000;
 };

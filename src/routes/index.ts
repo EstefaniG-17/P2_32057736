@@ -22,4 +22,3 @@ router.post('/contact/add', (req, res) => contactsController.add(req, res));
 router.post('/payment/add', (req, res) => paymentsController.add(req, res));
 
 export default router;
-

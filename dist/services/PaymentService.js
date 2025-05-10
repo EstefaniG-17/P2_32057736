@@ -46,7 +46,7 @@ class PaymentService {
             return {
                 success: true,
                 transactionId: paymentResult.id,
-                message: 'Pago exitoso'
+                message: 'Pago realizado'
             };
         });
     }

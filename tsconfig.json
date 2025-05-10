@@ -6,10 +6,13 @@
       "rootDir": "./src",
       "strict": true,
       "esModuleInterop": true,
-      // ...existing code...
-      "lib": ["es2017", "dom"],
-// ...existing code...
-      "skipLibCheck": true
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true,
+      "moduleResolution": "node",
+      "baseUrl": ".",
+      "paths": {
+        "*": ["node_modules/*"]
+      }
     },
     "include": ["src/**/*"],
     "exclude": ["node_modules"]

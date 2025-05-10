@@ -20,7 +20,7 @@ class ContactsController {
             try {
                 const { email, name, comment } = req.body;
                 const ipAddress = req.ip || 'unknown';
-                const result = yield this.service.add(email, name, comment, ipAddress);
+                const result = yield this.service.add(email.trim(), name, comment, ipAddress);
                 req.session.message = result.message;
                 req.session.success = true;
                 return res.redirect('/');

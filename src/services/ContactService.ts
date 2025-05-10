@@ -40,4 +40,3 @@ if (!validateText(name, this.NAME_MIN, this.NAME_MAX)) {
     }
 
 }
-

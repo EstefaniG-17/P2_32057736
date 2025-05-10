@@ -1,20 +1,16 @@
-import { Database, open } from 'sqlite';
-import sqlite3 from 'sqlite3';
+import { DatabaseFacade } from '../facades/DatabaseFacade';
 
 export class ContactsModel {
-    private db: Database | null = null;
+    private db: DatabaseFacade;
 
     constructor() {
+        this.db = new DatabaseFacade();
         this.initializeDB();
     }
 
     private async initializeDB() {
-        this.db = await open({
-            filename: './contacts.db',
-            driver: sqlite3.Database
-        });
-
-        await this.db.exec(`
+        await this.db.initialize();
+        await this.db.runQuery(`
             CREATE TABLE IF NOT EXISTS contacts (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 email TEXT NOT NULL,
@@ -26,17 +22,9 @@ export class ContactsModel {
         `);
     }
 
-    public async add(
-        email: string,
-        name: string,
-        comment: string,
-        ipAddress: string
-    ) {
-        if (!this.db) throw new Error('Database not initialized');
-
-        const result = await this.db.run(
-            `INSERT INTO contacts (email, name, comment, ip_address)
-             VALUES (?, ?, ?, ?)`,
+    public async add(email: string, name: string, comment: string, ipAddress: string) {
+        const result = await this.db.runQuery(
+            `INSERT INTO contacts (email, name, comment, ip_address) VALUES (?, ?, ?, ?)`,
             [email, name, comment, ipAddress]
         );
 
@@ -46,13 +34,11 @@ export class ContactsModel {
             name,
             comment,
             ipAddress,
-            createdAt: new Date().toISOString()
+            createdAt: new Date().toISOString(),
         };
     }
-    
+
     public async get() {
-        if (!this.db) throw new Error('Database not initialized');
-        return this.db.all('SELECT * FROM contacts ORDER BY created_at DESC');
+        return this.db.allQuery('SELECT * FROM contacts ORDER BY created_at DESC');
     }
 }
-

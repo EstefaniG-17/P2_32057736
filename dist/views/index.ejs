@@ -1,18 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tu agencia de viajes de confianza""</title>
+    <title><%= title %></title>
     <link rel="stylesheet" href="/stylesheets/style.css">
-
 </head>
-
-   
 <body>
     <header>
         <h1>Agencia de viajes "Nosotros te llevamos"</h1>
-        <nav>
+         <nav>
             <ul>
                 <li><a href="#Nosotros">Nosotros</a></li>
                 <li><a href="#beneficios">Beneficios</a></li>
@@ -22,24 +19,26 @@
             </ul>
         </nav>
     </header>
-   
-    <div class="container">
-        <% if (message) { %>
-          <div class="alert alert-<%= success ? 'success' : 'error' %>">
+<nav class="mainColor">
+<a href="./admin/contacts">Contactos</a>  
+</nav>
+
+<main>
+    <% if (message) { %>
+        <div class="alert alert-<%= success ? 'success' : 'error' %>">
             <%= message %>
             <span class="close-btn" onclick="this.parentElement.style.display='none'">
                 &times;
             </span>
-          </div>
-        <% } %>
-        <% if (paymentMessage) { %>
-          <div class="alert alert-<%= paymentSuccess ? 'success' : 'error' %>">
-            <%= paymentMessage %>
-            <button onclick="this.parentElement.style.display='none'">×</button>
-          </div>
-        <% } %>
-
-
+        </div>
+    <% } %>
+    <% if (paymentMessage) { %>
+    <div class="alert alert-<%= paymentSuccess ? 'success' : 'error' %>">
+        <%= paymentMessage %>
+        <button onclick="this.parentElement.style.display='none'">×</button>
+    </div>
+<% } %>
+        <div class="container">
         <section class="card" id="Nosotros">
           <h2>Nosotros</h2>
           <p>En el mundo de los viajes, la experiencia lo es todo. En nuestra agencia, no solo vendemos viajes, creamos experiencias memorables. Conocemos cada rincón, cada destino y cada detalle que hará de tu aventura algo excepcional.
@@ -64,8 +63,8 @@
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5mu-Q-LlWit10RVjYF-Qf8YwfdhOKmO-rYA&s" alt="imagen 3" class="imagen">
         </section>
 
-        <section class="card" id="contacto">
-          <h2>Contacto</h2>
+        <section id="contacto">
+            <h2>Contacto</h2>
             <p>Contáctanos a través del siguiente formulario:</p>
               <form id="contacto-form" action="/contact/add" method="POST">
                 <div class="email-and-name">
@@ -85,93 +84,86 @@
                   <button class="mainColor center" type="submit" id="submit-btn">Enviar</button>
               </form>
         </section>
-      
-        <section class="card" id="payment">
-          <% if (showPaymentForm) { %>
-                  <h2>Formulario de Pago</h2>
-                      <p>¿Interesado en pagar por nuestros servicios? ¡Puede empezar desde ya!</p>
-                  <form action="/payment/add" method="POST" id="payment-form">
-                      <div class="form-group">
-                          <label>Servicio de Pago:</label>
-                          <select name="service" required>
-                              <% paymentServices.forEach(service => { %>
-                                  <option value="<%= service %>"><%= service %></option>
-                              <% }); %>
-                          </select>
-                      </div>
 
-                      <div class="form-group email-and-name">
-                          <label for="email">Email:</label>
-                          <input type="email" name="email" id="email" maxlength="254" minlength="6" required>
+<section id="payment">
+<% if (showPaymentForm) { %>
+        <h2>Formulario de Pago</h2>
+            <p>¿Interesado en pagar por nuestros servicios? ¡Puede empezar desde ya!</p>
+        <form action="/payment/add" method="POST" id="payment-form">
+            <div class="form-group">
+                <label>Servicio de Pago:</label>
+                <select name="service" required>
+                    <% paymentServices.forEach(service => { %>
+                        <option value="<%= service %>"><%= service %></option>
+                    <% }); %>
+                </select>
+            </div>
 
-                          <label for="cardholderName">Nombre del Titular:</label>
-                          <input type="text" name="cardholderName" id="cardholderName" maxlength="100" minlength="2" required>
-                      </div>
+            <div class="form-group email-and-name">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" maxlength="254" minlength="6" required>
 
-                        <div class="form-group">
-                            <label for="cardNumber">Número de Tarjeta:</label>
-                           <input type="text" name="cardNumber" id="cardNumber" pattern="\d{13,19}" maxlength="19" minlength="13" required>
-                        </div>
+                <label for="cardholderName">Nombre del Titular:</label>
+                <input type="text" name="cardholderName" id="cardholderName" maxlength="100" minlength="2" required>
+            </div>
 
-                        <div class="form-group">
-                            <label>Fecha de Expiración:</label>
-                        <div class="expiry-container">
-                            <select name="expMonth" required>
-                             <option value="">Mes</option>
-                             <% for(let i=1; i<=12; i++) { %>
-                                  <option value="<%= i %>"><%= i %></option>
-                             <% } %>
-                            </select>
-                            <select name="expYear" required>
-                             <option value="">Año</option>
-                              <% const currentYear = new Date().getFullYear();
-                               for(let i=0; i<10; i++) { %>
-                               <option value="<%= currentYear + i %>"><%= currentYear + i %></option>
-                              <% } %>
-                            </select>
-                         </div>
-                        </div>
+            <div class="form-group">
+                <label for="cardNumber">Número de Tarjeta:</label>
+                <input type="text" name="cardNumber" id="cardNumber" pattern="\d{13,19}" maxlength="19" minlength="13" required>
+            </div>
 
-                        <div class="form-group">
-                          <label for="cvv">CVV:</label>
-                          <input type="text" name="cvv" id="cvv" pattern="\d{3,4}" maxlength="4" minlength="3" required>
-                        </div>
+            <div class="form-group">
+                <label>Fecha de Expiración:</label>
+                <div class="expiry-container">
+                    <select name="expMonth" required>
+                        <option value="">Mes</option>
+                        <% for(let i=1; i<=12; i++) { %>
+                            <option value="<%= i %>"><%= i %></option>
+                        <% } %>
+                    </select>
+                    <select name="expYear" required>
+                        <option value="">Año</option>
+                        <% const currentYear = new Date().getFullYear();
+                           for(let i=0; i<10; i++) { %>
+                            <option value="<%= currentYear + i %>"><%= currentYear + i %></option>
+                        <% } %>
+                    </select>
+                </div>
+            </div>
 
-                        <div class="form-group">
-                         <label for="amount">Monto:</label>
-                         <input type="number" step="0.01" name="amount" id="amount" min="0" required>
-                        </div>
+            <div class="form-group">
+                <label for="cvv">CVV/CVC:</label>
+                <input type="text" name="cvv" id="cvv" pattern="\d{3,4}" maxlength="4" minlength="3" required>
+            </div>
 
-                        <div class="form-group">
-                          <label for="currency">Moneda:</label>
-                          <select name="currency" id="currency" required>
-                             <option value="USD">USD</option>
-                             <option value="EUR">EUR</option>
-                          </select>
-                        </div>
+            <div class="form-group">
+                <label for="amount">Monto:</label>
+                <input type="number" step="0.01" name="amount" id="amount" min="0" required>
+            </div>
 
-                         <button type="submit" id="submit-btn" class="mainColor center">Pagar</button>
-                  </form>
-          <% } %>
-        </section>
+            <div class="form-group">
+                <label for="currency">Moneda:</label>
+                <select name="currency" id="currency" required>
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                </select>
+            </div>
 
+            <button type="submit" id="submit-btn" class="mainColor center">Pagar</button>
+        </form>
+    <% } %>
+</section>
 
-        <section class="card" id="contacto">
-          <h2>Contactanos</h2>
-          <p>Síguenos en nuestras redes sociales:</p>
-           <ul>
-              <li><a href="https://www.facebook.com/profile.php?id=100034214540986">Facebook</a></li>
-              <li><a href="https://www.instagram.com/estefanigonzalez1701/">Instagram</a></li>
-            </ul>
-            
-             <p>o escribenos por whatsapp al:</p>
-            <ul>
-             <li><a>04245811939</a></li>
-            </ul>
-        </section>
-    </div>
+    </main>
+    
     <footer>
-        <p>&copy; 2025 Agencia de viajes "Nosotros te llevamos". Todos los derechos reservados.</p>
+      <p style="font-size: 14px;">Contáctanos</p>
+      <section id="contacto" class="collection">
+        <a href="#"  id="facebook"><label for="facebook" class="mainColor social-media facebook"></label></a>
+        <a href="#"  id="instagram"><label for="instagram" class="mainColor social-media instagram"></label></a>
+        <a href="#"  id="x"><label for="x" class="mainColor social-media twitter"></label></a>
+      </section>
+        <p>&copy; JD.2025 Clases Particulares. Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>
