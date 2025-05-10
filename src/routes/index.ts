@@ -1,23 +1,25 @@
-import express, { Request, Response, NextFunction } from 'express';
-const router = express.Router();
+import { Router, Request, Response } from 'express';
+import { ContactsController } from '../controllers/ContactsController';
+import { PaymentsController } from '../controllers/PaymentsController';
+
+const router = Router();
+const contactsController = new ContactsController();
+const paymentsController = new PaymentsController();
 
 /* GET home page. */
-router.get('/', (req: Request, res: Response, next: NextFunction) => {
-  res.render('index', {
-    title: 'Hola mundo',
-<<<<<<< HEAD
-    Nombres: 'Estefani Jeannielys',
-=======
-    Nombres: 'Estefani Jeanniely',
->>>>>>> ea0a97fd5f673a424b495d758d1ac6840c8a18da
-    Apellidos: 'Gonzalez Gonzalez',
-    CI: '32.057.736',
-    Seccion: '4'
+router.get('/', (req: Request, res: Response) => {
+  res.render('index', { 
+    title: 'TutorNest',
+    paymentServices: ['PayPal', 'Stripe', 'MercadoPago'],            
+    showPaymentForm: true
   });
 });
 
-<<<<<<< HEAD
+router.get('/admin/contacts', (req, res) => contactsController.index(req, res)
+);
+
+router.post('/contact/add', (req, res) => contactsController.add(req, res));
+router.post('/payment/add', (req, res) => paymentsController.add(req, res));
+
 export default router;
-=======
-export default router;
->>>>>>> ea0a97fd5f673a424b495d758d1ac6840c8a18da
+

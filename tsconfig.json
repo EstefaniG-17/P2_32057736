@@ -6,6 +6,9 @@
       "rootDir": "./src",
       "strict": true,
       "esModuleInterop": true,
+      // ...existing code...
+      "lib": ["es2017", "dom"],
+// ...existing code...
       "skipLibCheck": true
     },
     "include": ["src/**/*"],

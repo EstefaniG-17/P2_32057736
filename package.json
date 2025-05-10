@@ -2,11 +2,30 @@
   "name": "p2_32057736",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/views/index.ejs",
   "scripts": {
-    "start": "node index.js"
+    "start": "node dist/views/index.ejs",
+    "build": "tsc"
   },
   "author": "",
   "license": "ISC",
-  "type": "module"
+  "type": "commonjs",
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "express": "^5.1.0",
+    "express-session": "^1.18.1",
+    "http-errors": "^2.0.0",
+    "morgan": "^1.10.0",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.8",
+    "@types/express": "^5.0.1",
+    "@types/express-session": "^1.18.1",
+    "@types/morgan": "^1.9.9",
+    "@types/node": "^22.15.17",
+    "@types/sqlite3": "^5.1.0",
+    "typescript": "^5.0.0"
+  }
 }
