@@ -1,25 +1,12 @@
 {
-  "name": "mi-proyecto",
-  "version": "0.0.0",
-  "private": true,
+  "name": "p2_32057736",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "ts-node ./src/bin/www.ts"
+    "start": "node index.js"
   },
-  "dependencies": {
-    "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
-    "ejs": "~2.6.1",
-    "express": "~4.16.1",
-    "http-errors": "~1.6.3",
-    "morgan": "~1.9.1"
-  },
-  "devDependencies": {
-    "@types/cookie-parser": "^1.4.8",
-    "@types/debug": "^4.1.12",
-    "@types/express": "^5.0.1",
-    "@types/morgan": "^1.9.9",
-    "@types/node": "^22.14.0",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.8.3"
-  }
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
 }
