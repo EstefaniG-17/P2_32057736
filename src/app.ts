@@ -77,6 +77,12 @@ app.use((req: Request, res: Response, next: NextFunction) => {
   next();
 });
 
+app.use((req, res, next) => {
+  res.locals.gaKey = process.env.GOOGLE_ANALYTICS_KEY || '';
+  res.locals.cD = process.env.COOKIE_DOMAIN || '';
+  next();
+});
+
 const staticFilesPath = path.join(__dirname, 'public');
 app.use(express.static(staticFilesPath, {
   setHeaders: (res) => {
