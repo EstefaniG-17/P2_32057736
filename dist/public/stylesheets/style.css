@@ -1,0 +1,133 @@
+/* Estilo General */
+
+:root {
+--skyBlue: #21b5cf;
+--white:#f9f9f9;
+--lightGray: #ddd;
+--darkBeige: #333;
+--green:#155724;
+--backgroundGreen:#c3e6cb;
+--borderGreen: #d4edda;
+--backgroundRed: #f8d7da;
+--crimson: #721c24;
+--borderRed: #f5c6cb;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-color: var(--white);
+  color: var(--darkBeige);
+}
+
+/* Encabezado */
+header {
+  padding: 2rem 0.5rem;
+}
+
+.mainColor{
+  text-align: center;
+  background: var(--skyBlue);
+  color: var(--white);
+}
+
+.travel {
+  background-image: url(https://images.pexels.com/photos/1450340/pexels-photo-1450340.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+  background-size: 100%;
+  padding: 15%;
+  background-repeat: no-repeat;
+
+}
+
+@media (max-width: 660px) {
+  .travel {
+  background-size: 300%;
+  }
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+header {
+    text-shadow: 2px 2px black;
+}
+
+/* Secciones */
+main {
+  margin: 2rem;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+section h2 {
+  color: var(--skyBlue);
+  border-bottom: 2px solid var(--lightGray);
+  padding-bottom: 0.5rem;
+}
+
+.g-recaptcha {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+nav {
+padding: 1rem;
+}
+
+nav a {
+text-decoration: none;
+color: var(--white);
+border-radius: 5px;
+background-color: var(--lightGray);
+padding: 5px 20px;
+box-shadow: 4px 4px var(--darkBeige);
+transition-property: background-color; 
+transition-duration: 0.3s; 
+transition-timing-function: ease-in-out;
+}
+
+nav a:hover{
+    text-shadow: none;
+    background-color: var(--darkBeige);
+}
+
+nav a:visited {
+  color: inherit;
+}
+
+footer a {
+  cursor: default;
+}
+
+table { 
+width: 100%; 
+border-collapse: collapse;
+border: 2px solid var(--lightGray);
+}
+
+th, td { 
+padding: 8px; 
+text-align: left; 
+border-bottom: 1px solid #ddd; 
+}
+
+th { 
+  background-color: var(--lightGray); 
+}
+
+/* Pie de Página */
+footer {
+  text-align: center;
+  background: var(--darkBeige);
+  color: var(--white);
+  padding: 1rem 0;
+  margin-top: 2rem;
+}

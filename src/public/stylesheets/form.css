@@ -1,0 +1,116 @@
+/* Formulario */
+
+.form-group {
+margin-bottom: 15px;
+}
+
+#submit-btn {
+padding: 1rem 5rem;
+border-radius: 0.5rem;
+border: none;
+cursor: pointer;
+justify-content: center;
+  display: flex;
+}
+
+#payment, #contacto {
+  border: 1px solid var(--lightGray);
+  margin: 4% 20%;
+  border-radius: 20px;
+  padding: 20px 5%;
+}
+
+#contacto-form input, #contacto-form textarea, #payment-form input {
+border: 2px solid var(--lightGray);
+border-radius: 0.5rem;
+}
+
+#contacto-form textarea {
+width: 80%;
+resize: none;
+}
+
+.email-and-name {
+display: flex;
+justify-content: space-between;
+align-items: start;
+flex-direction: column;
+}
+
+.email-and-name input {
+width: 100% !important;
+height: 40px !important;
+margin: 10px 0;
+}
+
+@media (max-width: 850px) {
+  .email-and-name input {
+  width: 25%;
+  }
+}
+
+@media (max-width: 550px) {
+  .email-and-name input {
+  width: 15%;
+  }
+
+  #contacto-form textarea {
+  width: 60%;
+  }
+}
+
+.comment {
+display: flex;
+align-items: flex-start;
+justify-content: space-around;
+}
+
+label {
+display: block;
+margin-bottom: 5px;
+font-weight: bold;
+}
+
+#payment-form input, #payment-form select {
+width: 100%;
+padding: 8px;
+box-sizing: border-box;
+        }
+
+.center {
+  margin: 0 auto;
+}
+
+.alert {
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 4px;
+  position: relative;
+}
+
+.alert-success {
+background-color: var(--backgroundGreen);
+color: var(--green)
+border: 1px solid var(--borderGreen);
+}
+
+
+.alert-error {
+background-color: var(--backgroundRed);
+color: var(--red);
+border: 1px solid var(--borderRed);
+}
+
+
+.close-btn {
+position: absolute;
+right: 10px;
+top: 50%;
+transform: translateY(-50%);
+cursor: pointer;
+}
+
+.expiry-container {
+display: flex;
+gap: 10px;
+}
